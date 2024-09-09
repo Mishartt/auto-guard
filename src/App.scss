@@ -1,0 +1,163 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito:200,300,regular,500,600,700,800,900,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background: black;
+  font-family: 'SUSE';
+  color: white;
+  font-family: 'Nunito';
+}
+
+
+
+
+.gg-guard-page{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: 'Nunito';
+  
+
+
+
+
+  .gg-container{
+      width: 500px;
+      height: 700px;
+      border-radius: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
+      h3{
+          font-size: 1.8em;
+          text-align: center;
+      }
+      // background-color: wheat;
+      // border: 2px solid rgba(255, 255, 255, 0.273);
+      // background: linear-gradient(rgba(255, 255, 255, 0.116),rgba(255, 255, 255, 0));
+  }
+
+  .gg-box{
+      margin-top: 20px;
+      margin-bottom: 30px;
+      border-radius: 5px;
+      display: flex;
+
+
+      .gg-input{
+          color: white;
+          border: none;
+          min-height: 2em;
+          font-size: 1.2em;
+          background: rgb(37, 37, 37);
+          border: 2px solid rgba(255, 255, 255, 0.199);
+          border-radius: 5px;
+          padding: 10px;
+
+
+          &:focus{
+              outline: none;
+          }
+      }
+
+      .gg-send-btn{
+          border-radius: 5px;
+          background: rgb(37, 37, 37);
+          border: 2px solid rgba(255, 255, 255, 0.199);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          margin-left: 5px;
+          cursor: pointer;
+          img{
+              width: 55%;
+              transition: 0.15s;
+          }
+
+
+          transition: 0.15s;
+          &:hover{
+              background: rgb(70, 70, 70);
+              
+              img{
+                  transform: translateX(3px);
+              }
+          }
+      }
+  }
+
+  .gg-error{
+      text-align: center;
+      margin-top: 20px;
+      font-size: 1.3em;
+      font-weight: 700;
+
+      white-space: pre-wrap
+  }
+
+  .gg-guide{
+      text-align: center;
+      margin-top: 50px;
+      font-size: 1.2em;
+      font-weight: 400;
+
+      span{
+          font-weight: 700;
+          color: #fbbb43;
+      }
+  }
+
+  .gg-guard-box{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      span{
+          margin-top: 10px;
+          font-weight: 500;
+          font-size: 1.1em
+      }
+  }
+
+  .gg-guard{
+      padding: 15px 20px;
+      background: rgba(37, 37, 37, 0.575);
+      border: 2px solid rgb(37, 37, 37);
+      border-radius: 5px;
+      font-size: 2em;
+      font-weight: 700;
+      cursor: pointer;
+
+      transition: 0.3s;
+      &:hover{
+          transform: scale(1.035);
+      }
+  }
+}
+
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: white; /* Цвет текста */
+  -webkit-box-shadow: 0 0 0px 1000px #ffffff00 inset; /* Цвет фона */
+  transition: background-color 5000s ease-in-out 0s; /* Убираем анимацию изменения цвета фона */
+}
+
+input:-moz-autofill {
+  color: #333; /* Цвет текста для Firefox */
+  background-color: #ffffff00 !important; /* Цвет фона для Firefox */
+}
+
+
