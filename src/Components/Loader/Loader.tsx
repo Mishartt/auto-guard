@@ -1,7 +1,7 @@
 import "./Loader.scss";
 
 const Loader = () => {
-  return <div className="mini-loader"></div>;
+  return <div style={{}} className="mini-loader"></div>;
 };
 
 export default Loader;
