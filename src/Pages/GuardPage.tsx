@@ -1,6 +1,6 @@
 import axios from 'axios'
 import Loader from '../Components/Loader/Loader'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 const GGGuardPage = () => {
 
     const [userEmail,setUserEmail] = useState<string>('')
@@ -8,17 +8,31 @@ const GGGuardPage = () => {
     const [errorMessage,setErrorMessage] = useState<string | null>(null)
     const [guard,setGuard] = useState(false)
 
+
+    const checkMail = async() => {
+        await axios
+        .get("https://api.steam-rent.com/checkmail")
+        .then((resp) => console.log(resp.data));
+    }
+
+    function sleep(ms: number) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+
     const getCode = async() => {
         setIsLoading(true)
         setErrorMessage(null)
         try{
             if(!window.confirm('Вы уже ввели данные в Steam?')){
-                return
-            }
+                return                       //http://localhost:8080/getGuardGG
+            }                               //https://api.steam-rent.com
+            await sleep(3000)
+            await  checkMail()
             const resp = await axios.post('https://api.steam-rent.com/getGuardGG',{userEmail:userEmail.toLowerCase().trim()}).then(resp => resp.data)
             console.log(resp)
             setGuard(resp.guard)
             setIsLoading(false)
+            
             
         }catch(e:any){
             setIsLoading(false)
@@ -37,6 +51,12 @@ const GGGuardPage = () => {
         }
         
     }
+
+
+
+    useEffect(() => {
+       checkMail()
+    },[])
 
     return(
         <div className='gg-guard-page'>
